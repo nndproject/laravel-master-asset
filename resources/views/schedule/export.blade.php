@@ -5,7 +5,7 @@
                 <tr><th colspan="12" align="center"><strong>updated at {{\Carbon\Carbon::now()->format('d/F/Y')}}</strong></th></tr>
                 <tr>
                     <th rowspan="2">No</th>
-                    <th rowspan="2">Instansi</th>
+                    <th colspan="2">Instansi</th>
                     <th rowspan="2">Nama</th>
                     <th rowspan="2">No. Telepon</th>
                     <th colspan="5">Pertemuan</th>
@@ -13,6 +13,8 @@
                     <th rowspan="2">Status</th>
                 </tr>
                 <tr>
+                    <th>Jenis</th>
+                    <th>Nama</th>
                     <th>Jenis</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
@@ -25,6 +27,7 @@
                 @foreach ($data as $item)
                 <tr>
                     <td class="text-center">{{++$i}}</td>
+                    <td>{{$item->type_instansi}}</td>
                     <td>{{$item->instansi}}</td>
                     <td>{{$item->cp}}</td>
                     <td>{{$item->phone}}</td>

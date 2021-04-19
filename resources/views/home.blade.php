@@ -31,16 +31,18 @@
                     <table id="datatable" class="table table-bordered" width="100%">
                         <thead class="thead-dark text-center">
                             <tr>
-                                <th rowspan="2">No</th>
-                                <th rowspan="2">Instansi</th>
-                                <th rowspan="2">Nama</th>
-                                <th rowspan="2">No. Telepon</th>
+                                <th rowspan="2" class="align-middle">No</th>
+                                <th colspan="2" class="align-middle">Instansi</th>
+                                <th rowspan="2" class="align-middle">Nama</th>
+                                <th rowspan="2" class="align-middle">No. Telepon</th>
                                 <th colspan="5">Pertemuan</th>
-                                <th rowspan="2">Dibuat</th>
-                                <th rowspan="2">Status</th>
-                                <th rowspan="2">Action</th>
+                                <th rowspan="2" class="align-middle">Dibuat</th>
+                                <th rowspan="2" class="align-middle">Status</th>
+                                <th rowspan="2" class="align-middle">Action</th>
                             </tr>
                             <tr>
+                                <th>Jenis</th>
+                                <th>Nama</th>
                                 <th>Jenis</th>
                                 <th>Waktu</th>
                                 <th>Lokasi</th>
@@ -52,6 +54,7 @@
                             @forelse ($data as $item)
                                 <tr>
                                     <td class="text-center"">{{++$i}}</td>
+                                    <td>{{$item->type_instansi}}</td>
                                     <td>{{$item->instansi}}</td>
                                     <td>{{$item->cp}}</td>
                                     <td>{{$item->phone}}</td>
@@ -82,7 +85,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="10">Tidak ada data dalam database</td>
+                                    <td colspan="11">Tidak ada data dalam database</td>
                                 </tr>
                             @endforelse
                             

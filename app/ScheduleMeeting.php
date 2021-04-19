@@ -18,6 +18,7 @@ class ScheduleMeeting extends Model
     public $timestamps = false; */
 
     protected $fillable = [
+    	'type_instansi',
     	'instansi',
         'cp',
         'phone',

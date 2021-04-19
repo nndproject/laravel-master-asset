@@ -29,6 +29,7 @@ class HomeController extends Controller
     public function schedule()
     {
         return view('schedule.front');
+
     }
 
     public function postschedule(Request $request)
@@ -40,6 +41,7 @@ class HomeController extends Controller
         }
         
         $data = new ScheduleMeeting();
+        $data->type_instansi   = $request->typeInstansi;
         $data->instansi   = $request->instansi;
         $data->cp         = $request->cp;
         $data->phone      = $request->phone;
@@ -55,9 +57,8 @@ class HomeController extends Controller
 
         $param = array('message'=>'New Request at Meeting Schedule');
         $data->notify(new GlobalNotif($param));
-
-
-        return($request);
+        
+        return view('schedule.done');
 
        
 

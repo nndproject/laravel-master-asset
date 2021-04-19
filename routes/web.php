@@ -24,6 +24,8 @@ Route::get('/schedule/{id}','HomeController@schedulepdf')->name('front.schedule.
 Auth::routes();
 
 Route::group(['prefix' => 'adm',  'middleware' => 'auth'], function () {
+        Route::get('management-user/my-profile','ManagementUserController@profile')->name('management-user.my-profile');
+        Route::post('management-user/act-profile','ManagementUserController@actprofile')->name('management-user.act-profile');
         Route::get('/', 'ScheduleMeetingController@index')->name('home');
         Route::resource('/meeting-schedule','ScheduleMeetingController');
         Route::post('/meeting-schedule/export','ScheduleMeetingController@export')->name('meeting-schedule.export');

@@ -22,7 +22,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="600"> 
 
-	<title>PT. Arion Indonesia | Set Meeting Schedule</title>
+	<title>PT Enygma Solusi Negeri | Set Meeting Schedule</title>
     
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -51,13 +51,16 @@
     <link href="{{asset('fassets/css/bootstrap.min.css')}}" rel="stylesheet" />
 	<link href="{{asset('fassets/css/gsdk-bootstrap-wizard.css')}}" rel="stylesheet" />
 
-	<link href="{{asset('fassets/css/demo.css')}}" rel="stylesheet" />
+	<link href="{{asset('fassets/css/custom.css')}}" rel="stylesheet" />
     <script type="text/javascript">
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
             ]) !!};
       </script>
+    <style>
 
+
+    </style>
 </head>
 
 <body>
@@ -91,12 +94,48 @@
                     	</div>
 						<div class="wizard-navigation">
 							<ul>
-	                            <li><a href="#type-meeting" data-toggle="tab">Jenis Pertemuan</a></li>
+	                            <li><a href="#cat-meeting" data-toggle="tab">Jenis Instansi</a></li> 
+	                            <li><a href="#type-meeting" data-toggle="tab">Jenis Pertemuan</a></li> 
 	                            <li><a href="#details" data-toggle="tab">Details</a></li>
 	                            <li><a href="#description" data-toggle="tab">Description</a></li>
 	                        </ul>
 						</div>
                         <div class="tab-content">
+                            <div class="tab-pane" id="cat-meeting">
+                                <h4 class="info-text">Jenis Instansi? </h4>
+                                <div class="row">
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="col-sm-3 col-sm-offset-2">
+                                            <div class="choice" data-toggle="wizard-radio wiz2" rel="tooltip" title="Dari Instansi Kementerian">
+                                                <input type="radio" name="typeInstansi" value="KEMENTERIAN" required>
+                                                <div class="icon icon-cate">
+                                                    <h1>K</h1>
+                                                </div>
+                                                <h6>KEMENTERIAN</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="choice" data-toggle="wizard-radio wiz2" rel="tooltip" title="Dari Instansi Pemerintahan Daerah">
+                                                <input type="radio" name="typeInstansi" value="PEMERINTAH DAERAH" required>
+                                                <div class="icon icon-cate">
+                                                    <h1>P</h1>
+                                                </div>
+                                                <h6>PEMERINTAH DAERAH</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="choice" data-toggle="wizard-radio wiz2" rel="tooltip" title="Dari Instansi Universitas">
+                                                <input type="radio" name="typeInstansi" value="UNIVERSITAS" required>
+                                                <div class="icon icon-cate">
+                                                    <h1>U</h1>
+                                                </div>
+                                                <h6>UNIVERSITAS</h6>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tab-pane" id="type-meeting">
                                 <h4 class="info-text">Jenis Meeting yang diinginkan? </h4>
                                 <div class="row">
@@ -130,7 +169,7 @@
                                   </div>
                                   <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
-                                        <label>Nama Instansi</label>
+                                        <label>Nama Instansi/Kementrian/Universitas</label>
                                         <input type="text" name="instansi" class="form-control" placeholder="ex: DINAS PENDIDIKAN Kota Malang" required>
                                       </div>
                                   </div>

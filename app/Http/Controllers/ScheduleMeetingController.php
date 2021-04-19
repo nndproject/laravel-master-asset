@@ -59,6 +59,7 @@ class ScheduleMeetingController extends Controller
         }
 
         $data = new ScheduleMeeting();
+        $data->type_instansi   = $request->type_instansi;
         $data->instansi   = $request->instansi;
         $data->cp         = $request->cp;
         $data->phone      = $request->phone;
@@ -120,6 +121,7 @@ class ScheduleMeetingController extends Controller
         }
 
         $data = ScheduleMeeting::findOrFail($id);
+        $data->type_instansi   = $request->type_instansi;
         $data->instansi   = $request->instansi;
         $data->cp         = $request->cp;
         $data->phone      = $request->phone;
@@ -128,6 +130,7 @@ class ScheduleMeetingController extends Controller
         $data->location   = $request->location;
         $data->audient    = $request->audient;
         $data->description= $request->description;
+        $data->status     = $request->status;
         $data->save();
 
 

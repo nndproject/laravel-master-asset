@@ -33,6 +33,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="set_type_instansi" class="col-sm-2 col-form-label">Jenis Instansi</label>
+                            <div class="col-sm-10">
+                            <input type="text" name="type_instansi" class="form-control"  id="set_type_instansi" value="{{$data->type_instansi}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="set_instansi" class="col-sm-2 col-form-label">Nama Instansi</label>
                             <div class="col-sm-10">
                             <input type="text" name="instansi" class="form-control"  id="set_instansi" value="{{$data->instansi}}">

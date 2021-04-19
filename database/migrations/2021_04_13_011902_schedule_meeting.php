@@ -15,6 +15,7 @@ class ScheduleMeeting extends Migration
     {
         Schema::create('schedule_meeting', function (Blueprint $table) {
             $table->id();
+            $table->string('type_instansi')->nullable();
             $table->string('instansi');
             $table->string('cp',50);
             $table->string('phone',20)->nullable();

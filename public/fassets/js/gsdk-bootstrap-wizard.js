@@ -111,6 +111,14 @@ $(document).ready(function() {
     });
 
 
+    $('[data-toggle="wizard-radio wiz2"]').click(function() {
+        wizard = $(this).closest('.wizard-card wiz2');
+        wizard.find('[data-toggle="wizard-radio wiz2"]').removeClass('active');
+        $(this).addClass('active');
+
+        $(wizard).find('[name="typeInstansi"]').removeAttr('checked');
+        $(this).find('[name="typeInstansi"]').prop('checked', 'true');
+    });
 
     $('[data-toggle="wizard-radio"]').click(function() {
         wizard = $(this).closest('.wizard-card');
@@ -118,8 +126,8 @@ $(document).ready(function() {
         $(this).addClass('active');
 
 
-        $(wizard).find('[type="radio"]').removeAttr('checked');
-        $(this).find('[type="radio"]').prop('checked', 'true');
+        $(wizard).find('[name="category"]').removeAttr('checked');
+        $(this).find('[name="category"]').prop('checked', 'true');
 
         if ($("input[name='category']:checked").val() === 'offline') {
             $('#set_location').html(`
